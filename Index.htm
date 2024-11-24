@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluechip NFT Giveaway</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #1E90FF;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+        .content {
+            margin-top: 50px;
+        }
+        .content h2 {
+            font-size: 32px;
+            color: #333;
+        }
+        .fee {
+            font-size: 20px;
+            margin-top: 20px;
+            color: #555;
+        }
+        .eth-wallet {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #444;
+        }
+        .entry-form {
+            margin-top: 30px;
+            font-size: 18px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            width: 80%;
+            max-width: 400px;
+        }
+        input[type="submit"] {
+            background-color: #1E90FF;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+            width: 80%;
+            max-width: 400px;
+        }
+        input[type="submit"]:hover {
+            background-color: #4682B4;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+        .thank-you-message {
+            margin-top: 30px;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Bluechip NFT Giveaway!
+</header>
+
+<div class="content">
+    <h2>Win a Rare Bluechip NFT</h2>
+    <p>Participate in our Bluechip NFT Giveaway! The entry fee is 0.25 ETH.</p>
+
+    <div class="fee">
+        <p>Entry Fee: 0.25 ETH</p>
+    </div>
+
+    <div class="eth-wallet">
+        <p>Send the 0.25 ETH entry fee to the following Ethereum wallet address:</p>
+        <p><strong>0x1234567890abcdef1234567890abcdef12345678</strong></p>
+    </div>
+
+    <div class="entry-form">
+        <p>Enter your Ethereum transaction ID (TXID) to confirm your payment:</p>
+        <form id="entryForm">
+            <input type="text" id="txid" placeholder="Enter Transaction ID" required><br><br>
+            <input type="submit" value="Submit Entry">
+        </form>
+    </div>
+
+    <!-- Placeholder for thank-you message -->
+    <div id="thankYouMessage" class="thank-you-message" style="display: none;">
+        <p>Thank you for your entry!</p>
+        <p><strong>Transaction ID:</strong> <span id="submittedTxid"></span></p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Bluechip NFT Giveaway. All rights reserved.</p>
+</footer>
+
+<script>
+    // Handle form submission
+    document.getElementById("entryForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from submitting traditionally
+
+        // Get the entered transaction ID
+        var txid = document.getElementById("txid").value;
+
+        // Hide the form
+        document.querySelector(".entry-form").style.display = "none";
+
+        // Show the "Thank You" message and the submitted transaction ID
+        document.getElementById("thankYouMessage").style.display = "block";
+        document.getElementById("submittedTxid").textContent = txid;
+    });
+</script>
+
+</body>
+</html>
